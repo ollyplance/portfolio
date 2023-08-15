@@ -1,0 +1,35 @@
+.project-container {
+  cursor: pointer;
+}
+
+.project-image-container {
+  height: 0;
+  padding-bottom: 75%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.project-image {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.project-title,
+.project-description,
+.project-hashtags {
+  margin-top: 15px;
+}
+
+.project-hashtags {
+  display: flex;
+
+  p {
+    margin-right: 5px;
+  }
+}
+
+.project-info {
+}

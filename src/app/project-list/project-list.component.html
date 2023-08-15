@@ -1,0 +1,29 @@
+
+<div class="projects-container">
+    <div class="filter-bar">
+        <div class="tag-selector">
+            <!-- <h2 class="fw-bold fs-900">Featured</h2> -->
+            <div class="dropdown" #dropdown>
+                <div class="select-button">
+                    <h3 class="textBox fw-bold fs-800" (click)="toggleDropDown()">{{selectedProject}}</h3>
+                    <img src="../../assets/icons/chevron-down.svg" alt="chevron-down"/>
+                </div>
+                
+                <ul class="option">
+                    <li (click)="selectDropDown('all')">All Projects</li>
+                    <li (click)="selectDropDown('featured')">Featured</li>
+                    <li (click)="selectDropDown('carnegie-mellon')">Carnegie Mellon</li>
+                    <li (click)="selectDropDown('internships')">Internships</li>
+                </ul>
+            </div>
+        </div>
+        <div class="search">
+
+        </div>
+    </div>
+    <div class="project-list-container">
+        <a class="project" *ngFor="let project of projects" [routerLink]="project.routerLink">
+            <app-project-card [project]="project"></app-project-card>
+        </a>
+    </div>
+</div>

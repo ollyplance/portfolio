@@ -1,0 +1,14 @@
+<div class="project-container">
+    <div class="project-image-container">
+        <img class="project-image" [src]="project.imageLocation" alt="">
+    </div>
+    <div class="project-info">
+        <h4 class="project-title fw-semi-bold fs-600">{{project.title}}</h4>
+        <p class="project-description fw-regular fs-500">{{project.description}}</p>
+        <div class="project-hashtags">
+            <p class="fw-light fs-300" *ngFor="let hashtag of project.hashtags">
+                {{"#"+hashtag}}
+            </p>
+        </div>
+    </div>
+</div>

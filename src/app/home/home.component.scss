@@ -1,0 +1,159 @@
+.page-container {
+}
+
+.banner {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-content {
+  display: flex;
+  max-width: 1500px;
+}
+
+.banner-text {
+}
+
+.banner-name {
+  margin-bottom: 0px;
+}
+
+.banner-links {
+  margin-top: 20px;
+
+  button {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+}
+
+.banner-left-side {
+  padding: 50px;
+  width: 60%;
+}
+
+.banner-right-side {
+  width: 40%;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  height: auto;
+  max-width: 300;
+  border-radius: 20px;
+}
+
+.projects {
+}
+
+.projects-feed {
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-button {
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  margin-bottom: 30px;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+
+  // bouncing hover animation from: https://codepen.io/webmantras/pen/azWJOB
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  animation: bounce 3s infinite;
+  -webkit-animation: bounce 3s infinite;
+  -moz-animation: bounce 3s infinite;
+  -o-animation: bounce 3s infinite;
+
+  img {
+    height: 24px;
+    width: 24px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -webkit-transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-10px);
+  }
+  60% {
+    -webkit-transform: translateY(-5px);
+  }
+}
+
+@-moz-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -moz-transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-10px);
+  }
+  60% {
+    -moz-transform: translateY(-5px);
+  }
+}
+
+@-o-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -o-transform: translateY(0);
+  }
+  40% {
+    -o-transform: translateY(-10px);
+  }
+  60% {
+    -o-transform: translateY(-5px);
+  }
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
