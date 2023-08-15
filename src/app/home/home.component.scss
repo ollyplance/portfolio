@@ -1,29 +1,26 @@
 .page-container {
-}
-
-.banner {
-  height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
-.banner-content {
+.banner {
   display: flex;
-  max-width: 1500px;
-}
-
-.banner-text {
+  justify-content: center;
+  gap: 1rem;
+  padding: 0px 50px;
+  min-height: 100vh;
+  max-width: 1280px;
 }
 
 .banner-name {
-  margin-bottom: 0px;
+  margin: 0px;
 }
 
 .banner-links {
   margin-top: 20px;
+  display: flex;
 
-  button {
+  li button {
     width: 50px;
     height: 50px;
     margin-right: 10px;
@@ -36,16 +33,22 @@
 }
 
 .banner-left-side {
-  padding: 50px;
-  width: 60%;
+  max-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+  position: sticky;
+  left: 0;
+  top: 0;
+  display: flex;
+  padding: 50px 25px;
 }
 
 .banner-right-side {
-  width: 40%;
-  padding: 50px;
+  width: 50%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  right: 0;
+  padding: 50px 25px;
 }
 
 .profile-image {
@@ -54,106 +57,26 @@
   border-radius: 20px;
 }
 
+.profile-header {
+  display: flex;
+}
+
+.profile-image {
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+  object-fit: cover;
+  border-radius: 100px;
+}
+
 .projects {
+}
+
+.description {
+  margin-top: 20px;
 }
 
 .projects-feed {
   display: flex;
   justify-content: center;
-}
-
-.scroll-button {
-  position: absolute;
-  right: 50%;
-  bottom: 0;
-  margin-bottom: 30px;
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-
-  // bouncing hover animation from: https://codepen.io/webmantras/pen/azWJOB
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-  animation: bounce 3s infinite;
-  -webkit-animation: bounce 3s infinite;
-  -moz-animation: bounce 3s infinite;
-  -o-animation: bounce 3s infinite;
-
-  img {
-    height: 24px;
-    width: 24px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-@-webkit-keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -webkit-transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-10px);
-  }
-  60% {
-    -webkit-transform: translateY(-5px);
-  }
-}
-
-@-moz-keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -moz-transform: translateY(0);
-  }
-  40% {
-    -moz-transform: translateY(-10px);
-  }
-  60% {
-    -moz-transform: translateY(-5px);
-  }
-}
-
-@-o-keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    -o-transform: translateY(0);
-  }
-  40% {
-    -o-transform: translateY(-10px);
-  }
-  60% {
-    -o-transform: translateY(-5px);
-  }
-}
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
 }

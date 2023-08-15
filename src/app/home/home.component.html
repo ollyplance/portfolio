@@ -1,30 +1,42 @@
+<!-- some inspiration from https://brittanychiang.com/ -->
+
 <div class="page-container">
-  <div class="banner ff-primary bg-neutral-200">
-    <div class="banner-content">
-      <div class="banner-left-side">
-        <div class="banner-text">
-          <h1 class="fs-title fw-bold banner-name">Oliver P. Lance</h1>
-          <h2 class="fs-600 fw-medium">Software Engineer</h2>
-          <h3 class="fs-500 fw-regular">My name is Oliver and I graduated from Carnegie Mellon 
-            University with a Bachelors of Science in <b>Information Systems</b> and minors in 
-            <b>Computer Science</b>, <b>Game Design</b>, <b>Human-Computer Interaction</b>, and <b>Creative Writing</b>.
-          </h3>
-          <div class="banner-links">
-            <button class="bg-neutral-700"></button>
-            <button class="bg-neutral-700"></button>
-            <button class="bg-neutral-700"></button>
+  <div class="banner ff-primary">
+    <header class="banner-left-side">
+      <div class="banner-text">
+        <div class="profile-header">
+          <img class="profile-image" src="../../assets/banner/profile-image.jpg" alt="profile image"/>
+          <div>
+            <h1 class="fs-800 fw-bold banner-name">Olly P. Lance</h1>
+            <h2 class="fs-600 fw-medium">Software Engineer</h2>
           </div>
         </div>
+        <h3 class="fs-500 fw-regular description">My name is Oliver and I graduated from Carnegie Mellon 
+          University with a Bachelors of Science in <b>Information Systems</b> and minors in 
+          <b>Computer Science</b>, <b>Game Design</b>, <b>Human-Computer Interaction</b>, and <b>Creative Writing</b>.
+          <br/><br/>
+          The diverse path I pursued stemmed from combining my creativity with my love for problem-solving. 
+          Each of my minors has significantly influenced the way I approach software development, 
+          shaping how I understand the interaction between the software I create and its users, 
+          as well as enhancing my communication abilities when collaborating with team members. 
+        </h3>
       </div>
-      <div class="banner-right-side">
-        <img class="profile-image" src="../assets/banner/profile-image.jpg">
+      <ul class="banner-links">
+        <li>
+          <button class="bg-neutral-700"></button>
+        </li>
+        <li>
+          <button class="bg-neutral-700"></button>
+        </li>
+        <li>
+          <button class="bg-neutral-700"></button>
+        </li>
+      </ul>
+    </header>
+    <main class="banner-right-side">
+      <div class="projects" id="projects-content">
+        <app-project-list class="projects-feed"></app-project-list>
       </div>
-      <button class="scroll-button" (click)="scrollToContent()">
-        <img src="../assets/icons/chevron-double-down.svg" alt="down arrow">
-      </button>
-    </div>
-  </div>
-  <div class="projects" id="projects-content">
-    <app-project-list class="projects-feed"></app-project-list>
+    </main>
   </div>
 </div>

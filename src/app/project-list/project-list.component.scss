@@ -2,18 +2,13 @@
   width: 100%;
 }
 
-.filter-bar {
-  margin: 50px 50px 0 50px;
-}
-
 .project-list-container {
   display: grid;
   grid-gap: 36px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 
 .project {
-  margin: 20px 30px;
   color: inherit; /* blue colors for links too */
   text-decoration: inherit;
 }
@@ -21,14 +16,13 @@
 .dropdown {
   position: relative;
   z-index: 100;
-  margin-top: 60px;
-  margin-bottom: 30px;
   width: 400px;
   user-select: none;
+  margin-bottom: 20px;
 
   .option {
     position: absolute;
-    top: 70px;
+    top: 40px;
     width: 100%;
     background: #fff;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
