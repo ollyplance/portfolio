@@ -1,10 +1,10 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import {
-  ComponentPortal,
-  Portal,
-  PortalModule,
-} from '@angular/cdk/portal';
+// import {
+//   ComponentPortal,
+//   Portal,
+//   PortalModule,
+// } from '@angular/cdk/portal';
 import { filter, pipe } from 'rxjs';
 
 import { BaseProject } from '../_models/base-project.component';
@@ -23,7 +23,7 @@ import { title } from 'process';
 export class ProjectListComponent implements OnInit {
   @ViewChild('dropdown') dropdown!: ElementRef;
   @ViewChild('projectOverlay') projectOverlay!: ElementRef;
-  componentPortal: ComponentPortal<ComponentPortalExample>;
+  // componentPortal: ComponentPortal<ComponentPortalExample>;
 
   projects: BaseProject[] = allProjects
   selectedProject = 'All Projects'
