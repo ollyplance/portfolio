@@ -1,5 +1,10 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import {
+  ComponentPortal,
+  Portal,
+  PortalModule,
+} from '@angular/cdk/portal';
 import { filter, pipe } from 'rxjs';
 
 import { BaseProject } from '../_models/base-project.component';
@@ -17,11 +22,13 @@ import { title } from 'process';
 })
 export class ProjectListComponent implements OnInit {
   @ViewChild('dropdown') dropdown!: ElementRef;
+  @ViewChild('projectOverlay') projectOverlay!: ElementRef;
+  componentPortal: ComponentPortal<ComponentPortalExample>;
 
   projects: BaseProject[] = allProjects
   selectedProject = 'All Projects'
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  constructor(private router: Router, private route: ActivatedRoute, private renderer: Renderer2) {
   }
 
   ngOnInit(): void {
@@ -49,6 +56,13 @@ export class ProjectListComponent implements OnInit {
       this.projects = allProjects
       this.selectedProject = selections["all"]
     }
+  }
+
+  openProjectOverlay(project: BaseProject) {
+    this.renderer.setStyle(this.projectOverlay.nativeElement, 'width', '100%');
+  } 
+  closeProjectOverlay() {
+    this.renderer.setStyle(this.projectOverlay.nativeElement, 'width', '0');
   }
 }
 

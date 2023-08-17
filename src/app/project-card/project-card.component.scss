@@ -1,17 +1,39 @@
 .project-container {
   cursor: pointer;
+  border-radius: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  filter: none;
+  padding: 10px;
+
+  &:hover {
+    // background-color: rgba(128, 128, 128, 0.105);
+    // box-shadow: 5px 5px 20px rgb(182, 182, 182);
+    background-image: url(../../assets/beams.jpeg);
+    .project-image {
+      animation: enlargeImage 0.25s;
+      transform: scale(1.1);
+    }
+
+    .project-title {
+      color: var(--clr-primary-400);
+    }
+  }
 }
 
 .project-image-container {
   height: 0;
   padding-bottom: 75%;
+  margin: 20px;
   position: relative;
   overflow: hidden;
   border-radius: 20px;
+  grid-column: 1 / 3;
 }
 
 .project-image {
   object-fit: cover;
+  animation: reduceImage 0.25s;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -32,4 +54,22 @@
 }
 
 .project-info {
+  grid-column: 3 / 7;
+}
+
+@keyframes reduceImage {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes enlargeImage {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
 }
