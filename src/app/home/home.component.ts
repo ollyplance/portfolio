@@ -8,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
   title = 'OliverLancePortfolio';
 
+  constructor() {}
+
   scrollToContent () {
     document.getElementById('projects-content')?.scrollIntoView();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
 
+  }
 }

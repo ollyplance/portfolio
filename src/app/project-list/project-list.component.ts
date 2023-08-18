@@ -1,20 +1,13 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { BaseProject, Project } from '../_models/base-project.component';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import {
-  ComponentPortal,
-  Portal,
-  PortalModule,
-} from '@angular/cdk/portal';
-import { Dialog, DialogRef } from '@angular/cdk/dialog';
-import { filter, pipe } from 'rxjs';
 
+import { Dialog } from '@angular/cdk/dialog';
 import { GoogleInternship2020Component } from '../projects/google-internship2020/google-internship2020.component';
 import { GoogleInternship2021Component } from '../projects/google-internship2021/google-internship2021.component';
 import { GoogleInternship2022Component } from '../projects/google-internship2022/google-internship2022.component';
 import { MontavieComponent } from '../projects/montavie/montavie.component';
+import { Project } from '../_models/base-project.component';
 import { RainydayloverComponent } from '../projects/rainydaylover/rainydaylover.component';
-import { title } from 'process';
 
 @Component({
   selector: 'app-project-list',
