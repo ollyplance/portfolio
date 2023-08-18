@@ -1,21 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 import { BaseProject } from 'src/app/_models/base-project.component';
+import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-rainydaylover',
   templateUrl: './rainydaylover.component.html',
-  styleUrls: ['./rainydaylover.component.scss']
+  styleUrls: [
+    '../../_models/base-project.component.scss',
+    './rainydaylover.component.scss']
 })
-export class RainydayloverComponent extends BaseProject implements OnInit {
+export class RainydayloverComponent extends BaseProject {
 
-  constructor() { 
-    super()
-    this.title = "RainyDayLover"
-    this.description = "An iOS application"
-    this.imageLocation = "../../assets/rainydaylover.png"
-    this.routerLink = "/rainydaylover",
-    this.hashtags = new Set(["iOS", "projects"])
+  constructor(dialogRef: DialogRef) { 
+    super(dialogRef)
   }
 
 }

@@ -1,0 +1,45 @@
+.dialog-container {
+  display: block;
+  position: absolute;
+  background: #fff;
+  border-radius: 20px;
+  padding: 16px;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 40px);
+  margin-top: 40px;
+  overflow-y: scroll;
+  background-color: white;
+  animation: dialog-enter 0.5s ease;
+}
+
+a.close-dialog {
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  right: 0px;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #3d3d4e;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+@keyframes dialog-enter {
+  from {
+    transform: top(100%);
+  }
+
+  to {
+    transform: top(0);
+  }
+}

@@ -1,21 +1,7 @@
-<div class="overlay" #projectOverlay>
-
-  <!-- Button to close the overlay navigation -->
-  <a class="closebtn" (click)="closeProjectOverlay()">&times;</a>
-
-  <!-- Overlay content -->
-  <div class="overlay-content">
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Clients</a>
-    <a href="#">Contact</a>
-  </div>
-</div>
-
 <div class="projects-container">
     <div class="dropdown bg-neutral" #dropdown>
         <div class="select-button">
-            <h3 class="textBox fw-bold fs-600" (click)="toggleDropDown()">{{selectedProject}}</h3>
+            <h3 class="textBox fw-bold fs-600">{{selectedProject}}</h3>
             <img src="../../assets/icons/chevron-down.svg" alt="chevron-down"/>
         </div>
         <ul class="option">
@@ -27,7 +13,7 @@
     </div>
     <div class="project-list-container">
         <a class="project" *ngFor="let project of projects">
-            <app-project-card [project]="project" (click)="openProjectOverlay(project)"></app-project-card>
+            <app-project-card [project]="project" (click)="openProjectDialog(project)"></app-project-card>
         </a>
     </div>
 </div>

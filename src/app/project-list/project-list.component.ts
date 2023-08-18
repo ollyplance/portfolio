@@ -1,13 +1,14 @@
 import { ActivatedRoute, Router } from '@angular/router';
+import { BaseProject, Project } from '../_models/base-project.component';
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-// import {
-//   ComponentPortal,
-//   Portal,
-//   PortalModule,
-// } from '@angular/cdk/portal';
+import {
+  ComponentPortal,
+  Portal,
+  PortalModule,
+} from '@angular/cdk/portal';
+import { Dialog, DialogRef } from '@angular/cdk/dialog';
 import { filter, pipe } from 'rxjs';
 
-import { BaseProject } from '../_models/base-project.component';
 import { GoogleInternship2020Component } from '../projects/google-internship2020/google-internship2020.component';
 import { GoogleInternship2021Component } from '../projects/google-internship2021/google-internship2021.component';
 import { GoogleInternship2022Component } from '../projects/google-internship2022/google-internship2022.component';
@@ -18,17 +19,16 @@ import { title } from 'process';
 @Component({
   selector: 'app-project-list',
   templateUrl: './project-list.component.html',
-  styleUrls: ['./project-list.component.scss']
+  styleUrls: ['./project-list.component.scss'],
 })
 export class ProjectListComponent implements OnInit {
   @ViewChild('dropdown') dropdown!: ElementRef;
-  @ViewChild('projectOverlay') projectOverlay!: ElementRef;
-  // componentPortal: ComponentPortal<ComponentPortalExample>;
 
-  projects: BaseProject[] = allProjects
+  projects: Project[] = allProjects
   selectedProject = 'All Projects'
 
-  constructor(private router: Router, private route: ActivatedRoute, private renderer: Renderer2) {
+  constructor(private router: Router, private route: ActivatedRoute, 
+    private renderer: Renderer2, public dialog: Dialog) {
   }
 
   ngOnInit(): void {
@@ -58,11 +58,8 @@ export class ProjectListComponent implements OnInit {
     }
   }
 
-  openProjectOverlay(project: BaseProject) {
-    this.renderer.setStyle(this.projectOverlay.nativeElement, 'width', '100%');
-  } 
-  closeProjectOverlay() {
-    this.renderer.setStyle(this.projectOverlay.nativeElement, 'width', '0');
+  openProjectDialog(project: Project) {
+    this.dialog.open<string>(project.component);
   }
 }
 
@@ -77,10 +74,30 @@ const selections : SelectionName = {
   "internships": "Internships",
 }
 
-const allProjects : BaseProject[] = [
-  new GoogleInternship2022Component(),
-  new GoogleInternship2021Component(),
-  new GoogleInternship2020Component(),
-  new MontavieComponent(),
-  new RainydayloverComponent()
+const allProjects : Project[] = [
+  new Project("2022 Google Internship",
+              "Worked on a high impact project within the Fuchsia Graphics team to develop a new API and a demo for screen recording within the OS using C++.",
+              "../../assets/2022swe.jpg",
+              new Set(["internships", "featured"]),
+              GoogleInternship2022Component),
+  new Project("2021 Google Internship",
+              "Worked alongside Google Cloud Compute FE team to migrate existing pages to Angular.",
+              "../../assets/2021swe.png",
+              new Set(["internships"]),
+              GoogleInternship2021Component),
+  new Project("2020 SWE Internship", 
+              "Developed a full-stack portfolio website using Java Servlets, Datastore, and other Google APIs.",
+              "../../assets/2020swe.jpg", 
+              new Set(["internships"]), 
+              GoogleInternship2020Component),
+  new Project("Montavie",
+              "Created a social media iOS application for sharing images and descriptions for my thru-hike on the AT.",
+              "../../assets/montavie.png",
+              new Set(["projects", "featured"]),
+              MontavieComponent),
+  new Project("RainyDayLover",
+              "An iOS application",
+              "../../assets/rainydaylover.png",
+              new Set(["iOS", "projects"]),
+              RainydayloverComponent),
 ]

@@ -1,18 +1,33 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Type } from '@angular/core';
+
+import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-base-project',
-  template: 'No common template'
+  template: 'No common template',
+  styleUrls: ['./base-project.component.scss'],
 })
-export class BaseProject implements OnInit {
+export class BaseProject {
+  constructor(public dialogRef: DialogRef) {}
+
+  closeProjectDialog() {
+    this.dialogRef.close();
+  }
+}
+
+export class Project {
   title!: string;
   description!: string;
   imageLocation!: string;
-  routerLink!: string;
   hashtags!: Set<string>;
+  component: Type<BaseProject>;
 
-  constructor() {}
-
-  ngOnInit() {
+  constructor(title: string, description: string, imageLocation: string, 
+      hashtags: Set<string>, component: Type<BaseProject>) {
+    this.title = title;
+    this.description = description;
+    this.imageLocation = imageLocation;
+    this.hashtags = hashtags;
+    this.component = component;
   }
 }
