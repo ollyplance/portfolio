@@ -23,7 +23,7 @@ import { RainydayloverComponent } from './projects/rainydaylover/rainydaylover.c
     GoogleInternship2020Component,
     MontavieComponent,
     RainydayloverComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

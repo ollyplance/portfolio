@@ -12,10 +12,6 @@
   max-width: 1280px;
 }
 
-.banner-name {
-  margin: 0px;
-}
-
 .banner-links {
   margin-top: 20px;
   display: flex;
@@ -61,14 +57,19 @@
   padding: 50px 25px;
 }
 
-.profile-image {
-  height: auto;
-  max-width: 300;
-  border-radius: 20px;
-}
-
 .profile-header {
   display: flex;
+}
+
+.banner-name {
+  margin: 0px;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.hide {
+  transition: opacity 0.3s;
+  opacity: 0;
 }
 
 .profile-image {
@@ -77,9 +78,6 @@
   margin-right: 20px;
   object-fit: cover;
   border-radius: 100px;
-}
-
-.projects {
 }
 
 .description {
@@ -105,6 +103,33 @@
   border-width: 0;
 }
 
+.signature-path {
+  opacity: 0;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  max-width: 100%;
+  max-height: 100%;
+  .animated & {
+    opacity: 1;
+    animation-name: line;
+  }
+}
+
+.signature-container {
+  position: absolute;
+}
+
+.signature {
+  max-width: 50%;
+  max-height: 4rem;
+}
+
+@keyframes line {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
 @keyframes reduceButton {
   from {
     transform: scale(1.1);
@@ -113,6 +138,7 @@
     transform: scale(1);
   }
 }
+
 @keyframes enlargeButton {
   from {
     transform: scale(1);

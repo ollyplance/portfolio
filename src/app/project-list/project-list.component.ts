@@ -1,5 +1,5 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 import { Dialog } from '@angular/cdk/dialog';
 import { GoogleInternship2020Component } from '../projects/google-internship2020/google-internship2020.component';
@@ -20,28 +20,33 @@ export class ProjectListComponent implements OnInit {
   projects: Project[] = allProjects
   selectedProject = 'All Projects'
 
-  constructor(private router: Router, private route: ActivatedRoute, 
-    private renderer: Renderer2, public dialog: Dialog) {
+  constructor(private router: Router, private route: ActivatedRoute, public dialog: Dialog) {
   }
 
   ngOnInit(): void {
+    this.route.params
+      .subscribe(params => {
+        if (params['id']) {
+          this.openProjectDialog(params['id'])
+        }
+      })
     this.route.queryParams
       .subscribe(params => {
         if (params['s']) {
-          this.changeDropDown(params['s'])
+          this.changeDropdown(params['s'])
         }
       })
   }
 
-  toggleDropDown() {
+  toggleDropdown() {
     this.dropdown.nativeElement.classList.toggle("active")
   }
 
-  selectDropDown(selection?: string) {
+  selectDropdown(selection?: string) {
     this.router.navigate([], { relativeTo: this.route, queryParams: {s: selection} })
   }
 
-  changeDropDown(selection?: string) {
+  changeDropdown(selection?: string) {
     if (selection && selection != "all") {
       this.projects = allProjects.filter(project => project.hashtags.has(selection))
       this.selectedProject = selections[selection];
@@ -51,8 +56,17 @@ export class ProjectListComponent implements OnInit {
     }
   }
 
-  openProjectDialog(project: Project) {
-    this.dialog.open<string>(project.component);
+  openProjectDialog(urlPath: string, project?: Project) {
+    if (!project) {
+      project = allProjects.find(project => project.urlPath == urlPath);
+    }
+    if (project) {
+      let dialogRef = this.dialog.open<string>(project.component);
+      dialogRef.closed.subscribe(result => {
+        this.dialog.closeAll();
+        this.router.navigate(['portfolio'])
+      });
+    }
   }
 }
 
@@ -72,25 +86,30 @@ const allProjects : Project[] = [
               "Worked on a high impact project within the Fuchsia Graphics team to develop a new API and a demo for screen recording within the OS using C++.",
               "../../assets/2022swe.jpg",
               new Set(["internships", "featured"]),
-              GoogleInternship2022Component),
+              GoogleInternship2022Component,
+              "google2022"),
   new Project("2021 Google Internship",
               "Worked alongside Google Cloud Compute FE team to migrate existing pages to Angular.",
               "../../assets/2021swe.png",
               new Set(["internships"]),
-              GoogleInternship2021Component),
+              GoogleInternship2021Component,
+              "google2021"),
   new Project("2020 SWE Internship", 
               "Developed a full-stack portfolio website using Java Servlets, Datastore, and other Google APIs.",
               "../../assets/2020swe.jpg", 
               new Set(["internships"]), 
-              GoogleInternship2020Component),
+              GoogleInternship2020Component,
+              "google2020"),
   new Project("Montavie",
               "Created a social media iOS application for sharing images and descriptions for my thru-hike on the AT.",
               "../../assets/montavie.png",
               new Set(["projects", "featured"]),
-              MontavieComponent),
+              MontavieComponent,
+              "montavie"),
   new Project("RainyDayLover",
               "An iOS application",
               "../../assets/rainydaylover.png",
               new Set(["iOS", "projects"]),
-              RainydayloverComponent),
+              RainydayloverComponent,
+              "rainydaylover"),
 ]

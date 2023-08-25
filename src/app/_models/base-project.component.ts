@@ -21,13 +21,15 @@ export class Project {
   imageLocation!: string;
   hashtags!: Set<string>;
   component: Type<BaseProject>;
+  urlPath!: string;
 
   constructor(title: string, description: string, imageLocation: string, 
-      hashtags: Set<string>, component: Type<BaseProject>) {
+      hashtags: Set<string>, component: Type<BaseProject>, urlPath: string) {
     this.title = title;
     this.description = description;
     this.imageLocation = imageLocation;
     this.hashtags = hashtags;
     this.component = component;
+    this.urlPath = urlPath;
   }
 }

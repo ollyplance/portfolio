@@ -1,19 +1,19 @@
 <div class="projects-container">
     <div class="dropdown bg-neutral" #dropdown>
-        <div class="select-button">
+        <div class="select-button" (click)="toggleDropdown()">
             <h3 class="textBox fw-bold fs-600">{{selectedProject}}</h3>
             <img src="../../assets/icons/chevron-down.svg" alt="chevron-down"/>
         </div>
         <ul class="option">
-            <li (click)="selectDropDown('all')">All Projects</li>
-            <li (click)="selectDropDown('featured')">Featured</li>
-            <li (click)="selectDropDown('carnegie-mellon')">Carnegie Mellon</li>
-            <li (click)="selectDropDown('internships')">Internships</li>
+            <li (click)="selectDropdown('all')">All Projects</li>
+            <li (click)="selectDropdown('featured')">Featured</li>
+            <li (click)="selectDropdown('carnegie-mellon')">Carnegie Mellon</li>
+            <li (click)="selectDropdown('internships')">Internships</li>
         </ul>
     </div>
     <div class="project-list-container">
-        <a class="project" *ngFor="let project of projects">
-            <app-project-card [project]="project" (click)="openProjectDialog(project)"></app-project-card>
+        <a class="project" *ngFor="let project of projects" [routerLink]="project.urlPath">
+            <app-project-card [project]="project" (click)="openProjectDialog(project.urlPath, project)"></app-project-card>
         </a>
     </div>
 </div>

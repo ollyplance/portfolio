@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
 import { BaseProject } from 'src/app/_models/base-project.component';
+import { Component } from '@angular/core';
 import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
