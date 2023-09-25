@@ -1,19 +1,47 @@
 <div class="projects-container">
-    <div class="dropdown bg-neutral" #dropdown>
-        <div class="select-button" (click)="toggleDropdown()">
-            <h3 class="textBox fw-bold fs-600">{{selectedProject}}</h3>
-            <img src="../../assets/icons/chevron-down.svg" alt="chevron-down"/>
+    <div class="dropdowns">
+        <div class="dropdown bg-neutral" #typeDropdown>
+            <h3 class="fw-bold fs-600">Show me &nbsp;</h3>
+            <div class="clickable-block">
+                <div class="select-button" (click)="toggleDropdown(DropdownType.type)">
+                    <h3 class="text-primary-100 fw-bold fs-600">{{type}}</h3>
+                    <img src="../../assets/icons/chevron-down.svg" alt="chevron-down"/>
+                </div>
+                <ul class="option">
+                    <li class="primary-option" *ngFor="let s of selectTypes" (click)="selectDropdown(DropdownType.type, s)">{{s}}</li>
+                </ul>
+            </div>
         </div>
-        <ul class="option">
-            <li (click)="selectDropdown('all')">All Projects</li>
-            <li (click)="selectDropdown('featured')">Featured</li>
-            <li (click)="selectDropdown('carnegie-mellon')">Carnegie Mellon</li>
-            <li (click)="selectDropdown('internships')">Internships</li>
-        </ul>
+
+        <div class="dropdown bg-neutral" #fromDropdown>
+            <h3 class="fw-bold fs-600">&nbsp; from &nbsp;</h3>
+            <div class="clickable-block">
+                <div class="select-button" (click)="toggleDropdown(DropdownType.from)">
+                    <h3 class="text-accent-400 fw-bold fs-600">{{from}}</h3>
+                    <img src="../../assets/icons/chevron-down.svg" alt="chevron-down"/>
+                </div>
+                <ul class="option">
+                    <li class="accent-400-option" *ngFor="let s of fromTypes" (click)="selectDropdown(DropdownType.from, s)">{{s}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dropdown bg-neutral" #byDropdown>
+            <h3 class="fw-bold fs-600">&nbsp; by &nbsp;</h3>
+            <div class="clickable-block">
+                <div class="select-button" (click)="toggleDropdown(DropdownType.by)">
+                    <h3 class="text-accent-100 fw-bold fs-600">{{sortedBy}}</h3>
+                    <img src="../../assets/icons/chevron-down.svg" alt="chevron-down"/>
+                </div>
+                <ul class="option">
+                    <li class="accent-100-option" *ngFor="let s of byTypes" (click)="selectDropdown(DropdownType.by, s)">{{s}}</li>
+                </ul>
+            </div>
+        </div>
     </div>
     <div class="project-list-container">
-        <a class="project" *ngFor="let project of projects" [routerLink]="project.urlPath">
-            <app-project-card [project]="project" (click)="openProjectDialog(project.urlPath, project)"></app-project-card>
-        </a>
+        <div class="project" *ngFor="let project of projects" (click)="navigateProject(project)">
+            <app-project-card [project]="project"></app-project-card>
+        </div>
     </div>
 </div>

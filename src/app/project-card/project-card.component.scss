@@ -9,7 +9,7 @@
   &:hover {
     // background-color: rgba(128, 128, 128, 0.105);
     // box-shadow: 5px 5px 20px rgb(182, 182, 182);
-    background-image: url(../../assets/beams.jpeg);
+    background-image: url(../../assets/images/beams.jpeg);
     .project-image {
       animation: enlargeImage 0.25s;
       transform: scale(1.1);
@@ -18,6 +18,13 @@
     .project-title {
       color: var(--clr-primary-400);
     }
+  }
+}
+
+.project-container:hover:not(:has(.project-hashtags a:hover)) {
+  .click-icon {
+    transform: translateX(3px);
+    fill: var(--clr-primary-400);
   }
 }
 
@@ -39,7 +46,6 @@
   position: absolute;
 }
 
-.project-title,
 .project-description,
 .project-hashtags {
   margin-top: 15px;
@@ -48,13 +54,43 @@
 .project-hashtags {
   display: flex;
 
-  p {
-    margin-right: 5px;
+  a {
+    display: flex;
+    margin-right: 15px;
+    text-decoration: none;
+
+    &:hover {
+      color: blue;
+
+      .click-icon {
+        transform: translateX(0px);
+      }
+    }
+
+    svg {
+      display: inline;
+      position: relative;
+      width: 1rem;
+      margin-right: 2px;
+    }
   }
 }
 
 .project-info {
   grid-column: 3 / 7;
+}
+
+.click-icon {
+  transition: transform 0.3s ease;
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.header {
+  display: inline-flex;
+  align-items: center;
 }
 
 @keyframes reduceImage {

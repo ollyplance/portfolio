@@ -139,6 +139,9 @@ svg {
 .text-primary-400 {
   color: var(--clr-primary-400);
 }
+.text-primary-100 {
+  color: var(--clr-primary-100);
+}
 .text-accent-400 {
   color: var(--clr-accent-400);
 }
@@ -237,5 +240,11 @@ svg {
   border-radius: 0.5rem;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

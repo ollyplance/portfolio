@@ -20,15 +20,19 @@ export class Project {
   description!: string;
   imageLocation!: string;
   hashtags!: Set<string>;
-  component: Type<BaseProject>;
-  urlPath!: string;
+  links!: string[][];
+  individualLink?: string;
+  component?: Type<BaseProject>;
+  urlPath?: string;
 
   constructor(title: string, description: string, imageLocation: string, 
-      hashtags: Set<string>, component: Type<BaseProject>, urlPath: string) {
+      hashtags: Set<string>, links: string[][], individualLink?: string, component?: Type<BaseProject>, urlPath?: string) {
     this.title = title;
     this.description = description;
     this.imageLocation = imageLocation;
     this.hashtags = hashtags;
+    this.links = links;
+    this.individualLink = individualLink;
     this.component = component;
     this.urlPath = urlPath;
   }
