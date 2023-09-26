@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 import { Project } from '../_models/base-project.component';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-project-card',
@@ -13,6 +14,15 @@ export class ProjectCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  formatProjectDate(d?: Date) {
+    console.log(d?.getMonth())
+    if (d != undefined) {
+      return formatDate(d!, "MM/yyyy", "en-US")
+    } else {
+      return "Present"
+    }
   }
 
 }

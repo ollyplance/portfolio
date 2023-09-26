@@ -1,4 +1,5 @@
 .project-container {
+  position: relative;
   cursor: pointer;
   border-radius: 20px;
   display: grid;
@@ -14,10 +15,6 @@
       animation: enlargeImage 0.25s;
       transform: scale(1.1);
     }
-
-    .project-title {
-      color: var(--clr-primary-400);
-    }
   }
 }
 
@@ -26,6 +23,23 @@
     transform: translateX(3px);
     fill: var(--clr-primary-400);
   }
+
+  .project-title {
+    color: var(--clr-primary-400);
+  }
+}
+
+.header a {
+  text-decoration: none;
+}
+
+.header a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .project-image-container {
@@ -56,6 +70,7 @@
 
   a {
     display: flex;
+    position: relative;
     margin-right: 15px;
     text-decoration: none;
 

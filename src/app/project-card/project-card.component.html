@@ -4,12 +4,12 @@
     </div>
     <div class="project-info">
         <span class="header">
-            <h4 class="project-title fw-semi-bold fs-600">{{project.title}}</h4>
+            <a class="project-title fw-semi-bold fs-600 text-neutral-900" [href]="project.urlPath ? project.urlPath : project.individualLink" target="_blank">{{project.title}}</a>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 click-icon">
                 <path fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z" clip-rule="evenodd" />
             </svg>
         </span>
-        <h3 class="fs-300">5/12/2020 - 7/12/2023</h3>
+        <h3 class="fs-300">{{formatProjectDate(project.dates[0])}} - {{formatProjectDate(project.dates[1])}}</h3>
         <p class="project-description fw-regular fs-500">{{project.description}}</p>
         <div class="project-hashtags">
             <a class="fw-light fs-300 text-accent-100" *ngFor="let project of project.links" [href]="project[1]" target="_blank">

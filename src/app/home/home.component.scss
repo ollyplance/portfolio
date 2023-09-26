@@ -4,12 +4,7 @@
 }
 
 .banner {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  padding: 0px 50px;
   min-height: 100vh;
-  max-width: 1280px;
 }
 
 .banner-links {
@@ -40,18 +35,10 @@
 
 .banner-left-side {
   max-height: 100vh;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 50%;
-  position: sticky;
-  left: 0;
-  top: 0;
-  display: flex;
   padding: 50px 25px;
 }
 
 .banner-right-side {
-  width: 50%;
   display: flex;
   right: 0;
   padding: 50px 25px;
@@ -82,7 +69,6 @@
 
 .description {
   margin-top: 20px;
-  max-width: 30rem;
   text-align: justify;
 }
 
@@ -122,6 +108,30 @@
 .signature {
   max-width: 50%;
   max-height: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .banner {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0px 50px;
+    max-width: 1280px;
+  }
+
+  .banner-left-side {
+    position: sticky;
+    width: 50%;
+    flex-direction: column;
+    justify-content: space-between;
+    left: 0;
+    top: 0;
+    display: flex;
+  }
+
+  .banner-right-side {
+    width: 50%;
+  }
 }
 
 @keyframes line {

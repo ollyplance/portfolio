@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="project-list-container">
-        <div class="project" *ngFor="let project of projects" (click)="navigateProject(project)">
+        <div class="project" *ngFor="let project of projects">
             <app-project-card [project]="project"></app-project-card>
         </div>
     </div>

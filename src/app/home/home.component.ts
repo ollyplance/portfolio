@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
     this.container.nativeElement.classList.add('animated');
   }
 
-  // from https://www.silvestar.codes/articles/how-to-animate-svg-signature/
+  // modified from https://www.silvestar.codes/articles/how-to-animate-svg-signature/
   calcPaths() {
     this.container.nativeElement.classList.remove('animated');
     
