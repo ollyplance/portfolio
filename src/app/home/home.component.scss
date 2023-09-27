@@ -34,14 +34,13 @@
 }
 
 .banner-left-side {
-  max-height: 100vh;
-  padding: 50px 25px;
+  padding: 25px 25px;
 }
 
 .banner-right-side {
   display: flex;
   right: 0;
-  padding: 50px 25px;
+  padding: 25px 25px;
 }
 
 .profile-header {
@@ -120,7 +119,9 @@
   }
 
   .banner-left-side {
+    max-height: 100vh;
     position: sticky;
+    padding: 50px 25px;
     width: 50%;
     flex-direction: column;
     justify-content: space-between;
@@ -130,6 +131,7 @@
   }
 
   .banner-right-side {
+    padding: 50px 25px;
     width: 50%;
   }
 }

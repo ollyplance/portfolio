@@ -17,7 +17,6 @@ export class ProjectCardComponent implements OnInit {
   }
 
   formatProjectDate(d?: Date) {
-    console.log(d?.getMonth())
     if (d != undefined) {
       return formatDate(d!, "MM/yyyy", "en-US")
     } else {

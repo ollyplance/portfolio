@@ -1,8 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 
 import { Dialog } from '@angular/cdk/dialog';
-import { MontavieComponent } from '../projects/montavie/montavie.component';
 import { Project } from '../_models/base-project.component';
 import { allProjects } from '../_data/projects';
 
@@ -15,6 +14,9 @@ export class ProjectListComponent implements OnInit {
   @ViewChild('typeDropdown') typeDropdown!: ElementRef;
   @ViewChild('fromDropdown') fromDropdown!: ElementRef;
   @ViewChild('byDropdown') byDropdown!: ElementRef;
+  @ViewChild('typeButton') typeButton!: ElementRef;
+  @ViewChild('fromButton') fromButton!: ElementRef;
+  @ViewChild('byButton') byButton!: ElementRef;
 
   DropdownType = DropdownType
   projects: Project[] = allProjects
@@ -27,7 +29,7 @@ export class ProjectListComponent implements OnInit {
   byTypes : string[] = ['newest', 'oldest']
   
 
-  constructor(private router: Router, private route: ActivatedRoute, public dialog: Dialog) {
+  constructor(private router: Router, private route: ActivatedRoute, public dialog: Dialog, private renderer: Renderer2) {
   }
 
   ngOnInit(): void {
@@ -52,6 +54,14 @@ export class ProjectListComponent implements OnInit {
       })
   }
 
+  ngAfterViewInit() {
+    this.renderer.listen('window', 'click',(e:Event)=>{
+      if (!this.typeButton.nativeElement.contains(e.target) && !this.fromButton.nativeElement.contains(e.target) && !this.byButton.nativeElement.contains(e.target)) {
+        this.closeAllDropdowns()
+      }
+    });
+  }
+
   toggleDropdown(dt: DropdownType) {
     if (dt === DropdownType.type) {
       this.typeDropdown.nativeElement.classList.toggle("active")
@@ -68,9 +78,16 @@ export class ProjectListComponent implements OnInit {
     }
   }
 
+  closeAllDropdowns() {
+    this.typeDropdown.nativeElement.classList.remove("active")
+    this.fromDropdown.nativeElement.classList.remove("active")
+    this.byDropdown.nativeElement.classList.remove("active")
+  }
+
   selectDropdown(dt: DropdownType, selection: string) {
     this.changeDropdown(dt, selection)
     this.router.navigate([], { relativeTo: this.route, queryParams: {type: this.type, from: this.from, by: this.sortedBy}, queryParamsHandling: 'merge'})
+    this.toggleDropdown(dt)
   }
 
   changeDropdown(dt: DropdownType, selection: string) {
