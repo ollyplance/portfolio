@@ -7,8 +7,7 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   { path: '', redirectTo: '/portfolio', pathMatch: 'full' },
-  { path: 'portfolio', component: HomeComponent },
-  { path: 'portfolio/:id', component: HomeComponent}
+  { path: 'portfolio', component: HomeComponent }
 ];
 
 @NgModule({
