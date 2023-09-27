@@ -50,7 +50,12 @@
 .banner-name {
   margin: 0px;
   opacity: 1;
+  font-size: var(--fs-700);
   transition: opacity 1s;
+}
+
+.banner-subtitle {
+  font-size: var(--fs-600);
 }
 
 .hide {
@@ -59,9 +64,9 @@
 }
 
 .profile-image {
-  width: 100px;
-  height: 100px;
-  margin-right: 20px;
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
   object-fit: cover;
   border-radius: 100px;
 }
@@ -92,7 +97,8 @@
   opacity: 0;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
-  max-width: 100%;
+  width: auto;
+  padding: 0;
   max-height: 100%;
   .animated & {
     opacity: 1;
@@ -105,8 +111,8 @@
 }
 
 .signature {
-  max-width: 50%;
-  max-height: 4rem;
+  width: auto;
+  max-height: var(--fs-900);
 }
 
 @media (min-width: 1024px) {
@@ -133,6 +139,22 @@
   .banner-right-side {
     padding: 50px 25px;
     width: 50%;
+  }
+}
+
+@media (min-width: 400px) {
+  .banner-name {
+    font-size: var(--fs-800);
+  }
+
+  .banner-subtitle {
+    font-size: var(--fs-600);
+  }
+
+  .profile-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
   }
 }
 
