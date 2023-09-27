@@ -4,7 +4,8 @@
 
 .project-list-container {
   display: grid;
-  grid-gap: 36px;
+  grid-row-gap: 15px;
+  grid-column-gap: 36px;
   grid-template-columns: repeat(auto-fill, 100%);
 }
 
