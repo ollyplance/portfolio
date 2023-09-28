@@ -2,7 +2,7 @@ import { Project } from '../_models/base-project.component';
 
 export const allProjects: Project[] = [
   new Project(
-    'SWE Internship · Google',
+    'SWE Internship',
     'Worked on a high impact project within the Fuchsia Graphics team to develop a new API and a demo for screen recording within the OS using C++.',
     '../../assets/images/2022swe.png',
     [new Date(2022, 4), new Date(2022, 8)],
@@ -25,7 +25,7 @@ export const allProjects: Project[] = [
   ),
 
   new Project(
-    'SWE Internship · Google',
+    'SWE Internship',
     'Worked alongside Google Cloud Compute FE team to migrate Cloud Compute Reservation page to Angular. The migration was rolled out to over 2000 monthly users.',
     '../../assets/images/2021swe.png',
     [new Date(2021, 4), new Date(2021, 7)],
@@ -35,7 +35,7 @@ export const allProjects: Project[] = [
   ),
 
   new Project(
-    'STEP Internship · Google',
+    'STEP Internship',
     'Worked with Angular to develop a full-stack website using Firebase with a team of 3. Implemented user authentication, profiles, data/image uploading, full-text search, and dynamic information.',
     '../../assets/images/2020swe.png',
     [new Date(2020, 4), new Date(2020, 7)],
@@ -98,7 +98,7 @@ export const allProjects: Project[] = [
   ),
 
   new Project(
-    'Angular Form Experimentation',
+    'Form Experimentation',
     'Experiemented with Angular forms and drag-and-drop to create a modular WYSIWYG. Work in progress, however, foundation is there. This was for an app idea for sharing modular posts about the outdoors where at some point it would include picture, music, gallery, poetry modulars and editing.',
     '../../assets/images/angular.png',
     [new Date(2022, 4), new Date(2022, 10)],
@@ -108,7 +108,7 @@ export const allProjects: Project[] = [
   ),
 
   new Project(
-    'Non-profit Consulting Project',
+    'Non-profit Consulting',
     'Worked with One To World to fix their data pipeline. They were unable to access old customer data due to a migration they had done internally. Recognized the problems and created a solution to extract and help them manage the data in the future.',
     '../../assets/images/onetoworldlogo.png',
     [new Date(2022, 0), new Date(2022, 4)],
@@ -138,7 +138,7 @@ export const allProjects: Project[] = [
   ),
 
   new Project(
-    '2022 Poetry Collection',
+    'Poetry Workshop',
     'Revised poetry from a Workshop class I took at CMU. Frequent writing and revisions due every week. Excited about my writing in this collection.',
     '../../assets/images/poetry2.png',
     [new Date(2022, 7), new Date(2022, 11)],
@@ -148,8 +148,8 @@ export const allProjects: Project[] = [
   ),
 
   new Project(
-    'Kiosk HCI Project',
-    'Build out Figma designs of bus kiosk by researching and prototyping designs to make travel more efficient. ',
+    'Kiosk Project',
+    'Build out Figma designs of bus kiosk by researching and prototyping designs to make travel more efficient.',
     '../../assets/images/kiosk.png',
     [new Date(2022, 0), new Date(2022, 4)],
     new Set(['projects & experiences', 'CMU']),
@@ -158,8 +158,8 @@ export const allProjects: Project[] = [
   ),
 
   new Project(
-    'Appalachian Trail Thru-hike',
-    "The AT is a 2198.4 mile trail from Georgia to Maine. I backpacked for 110 consecutive days carrying my shelter, food, and supplies. I pushed myself to physical and mental limits to successfully reach my goal. I documented every day's mileage, challenges, and elevation on the app I developed: Montavie.",
+    'AT Thru-hike',
+    "The Appalachian Trail is a 2198.4 mile trail from Georgia to Maine. I backpacked for 110 consecutive days carrying my shelter, food, and supplies. I pushed myself to physical and mental limits to successfully reach my goal. I documented every day's mileage, challenges, and elevation on the app I developed: Montavie.",
     '../../assets/images/AppalachianTrail.png',
     [new Date(2023, 1), new Date(2023, 5)],
     new Set(['physical challenges', 'personal life', 'featured']),
@@ -172,8 +172,8 @@ export const allProjects: Project[] = [
   ),
 
   new Project(
-    "CMU Men's Varsity Swim Team",
-    'Swam on the CMU Swim Team with intensive training schedule throughout college. Attended UAA meet my freshman year. Large time commitment with training 6 days a week and multiple doubles (morning and night).',
+    "CMU Swim Team",
+    'Swam on the CMU Mens Varsity Swim Team with intensive training schedule throughout college. Attended UAA meet my freshman year. Large time commitment with training 6 days a week and multiple doubles (morning and night).',
     '../../assets/images/CMUAthletics.png',
     [new Date(2019, 7), new Date(2022, 7)],
     new Set(['physical challenges', 'CMU']),

@@ -5,8 +5,7 @@
 .project-list-container {
   display: grid;
   grid-row-gap: 15px;
-  grid-column-gap: 36px;
-  grid-template-columns: repeat(auto-fill, 100%);
+  grid-template-columns: fit-content(100%);
 }
 
 .project {
@@ -46,11 +45,13 @@
 
   .option {
     position: absolute;
+    display: inline;
     z-index: 1;
-    top: 40px;
+    top: calc(100% + 5px);
+    right: 0;
     width: 200px;
     background: #fff;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
     overflow: hidden;
     display: none;
@@ -132,6 +133,6 @@
 
 @media (min-width: 400px) {
   .project-list-container {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: minmax(400px, 640px);
   }
 }
