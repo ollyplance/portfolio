@@ -17,13 +17,8 @@ import { ProjectListComponent } from './project-list/project-list.component';
     MontavieComponent,
     HomeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    PortalModule,
-    DialogModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, PortalModule, DialogModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

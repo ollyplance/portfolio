@@ -7,11 +7,11 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   { path: '', redirectTo: '/portfolio', pathMatch: 'full' },
-  { path: 'portfolio', component: HomeComponent }
+  { path: 'portfolio', component: HomeComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

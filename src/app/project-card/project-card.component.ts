@@ -6,22 +6,20 @@ import { formatDate } from '@angular/common';
 @Component({
   selector: 'app-project-card',
   templateUrl: './project-card.component.html',
-  styleUrls: ['./project-card.component.scss']
+  styleUrls: ['./project-card.component.scss'],
 })
 export class ProjectCardComponent implements OnInit {
   @Input() project!: Project;
-  
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+  constructor() {}
+
+  ngOnInit(): void {}
 
   formatProjectDate(d?: Date) {
     if (d != undefined) {
-      return formatDate(d!, "MM/yyyy", "en-US")
+      return formatDate(d!, 'MM/yyyy', 'en-US');
     } else {
-      return "Present"
+      return 'Present';
     }
   }
-
 }

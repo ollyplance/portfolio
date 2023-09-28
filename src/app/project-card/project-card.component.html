@@ -1,25 +1,58 @@
 <!-- suggestions of better accessbility from this amazing article here: https://inclusive-components.design/cards/ -->
 <div class="project-container">
-    <div class="project-image-container">
-        <img class="project-image" [src]="project.imageLocation" alt="">
+  <div class="project-image-container">
+    <img class="project-image" [src]="project.imageLocation" alt="" />
+  </div>
+  <div class="project-info">
+    <span class="header">
+      <a
+        class="project-title fw-semi-bold fs-600 text-neutral-900"
+        [href]="project.urlPath ? project.urlPath : project.individualLink"
+        target="_blank"
+        >{{ project.title }}</a
+      >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        class="w-5 h-5 click-icon"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z"
+          clip-rule="evenodd"
+        />
+      </svg>
+    </span>
+    <h3 class="fs-300">
+      {{ formatProjectDate(project.dates[0]) }} -
+      {{ formatProjectDate(project.dates[1]) }}
+    </h3>
+    <p class="project-description fw-regular fs-500">
+      {{ project.description }}
+    </p>
+    <div class="project-hashtags">
+      <a
+        class="fw-light fs-300 text-accent-100"
+        *ngFor="let project of project.links"
+        [href]="project[1]"
+        target="_blank"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="w-5 h-5"
+        >
+          <path
+            d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.667l3-3z"
+          />
+          <path
+            d="M11.603 7.963a.75.75 0 00-.977 1.138 2.5 2.5 0 01.142 3.667l-3 3a2.5 2.5 0 01-3.536-3.536l1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a4 4 0 105.656 5.656l3-3a4 4 0 00-.225-5.865z"
+          />
+        </svg>
+        {{ project[0] }}
+      </a>
     </div>
-    <div class="project-info">
-        <span class="header">
-            <a class="project-title fw-semi-bold fs-600 text-neutral-900" [href]="project.urlPath ? project.urlPath : project.individualLink" target="_blank">{{project.title}}</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 click-icon">
-                <path fill-rule="evenodd" d="M5 10a.75.75 0 01.75-.75h6.638L10.23 7.29a.75.75 0 111.04-1.08l3.5 3.25a.75.75 0 010 1.08l-3.5 3.25a.75.75 0 11-1.04-1.08l2.158-1.96H5.75A.75.75 0 015 10z" clip-rule="evenodd" />
-            </svg>
-        </span>
-        <h3 class="fs-300">{{formatProjectDate(project.dates[0])}} - {{formatProjectDate(project.dates[1])}}</h3>
-        <p class="project-description fw-regular fs-500">{{project.description}}</p>
-        <div class="project-hashtags">
-            <a class="fw-light fs-300 text-accent-100" *ngFor="let project of project.links" [href]="project[1]" target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
-                    <path d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.667l3-3z" />
-                    <path d="M11.603 7.963a.75.75 0 00-.977 1.138 2.5 2.5 0 01.142 3.667l-3 3a2.5 2.5 0 01-3.536-3.536l1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a4 4 0 105.656 5.656l3-3a4 4 0 00-.225-5.865z" />
-                </svg>
-                {{project[0]}}
-            </a>
-        </div>
-    </div>
+  </div>
 </div>

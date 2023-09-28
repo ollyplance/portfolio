@@ -8,9 +8,8 @@ describe('MontavieComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MontavieComponent ]
-    })
-    .compileComponents();
+      declarations: [MontavieComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

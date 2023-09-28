@@ -8,12 +8,11 @@ import { DialogRef } from '@angular/cdk/dialog';
   templateUrl: './montavie.component.html',
   styleUrls: [
     '../../_models/base-project.component.scss',
-    './montavie.component.scss']
+    './montavie.component.scss',
+  ],
 })
 export class MontavieComponent extends BaseProject {
-
   constructor(dialogRef: DialogRef) {
-    super(dialogRef)
+    super(dialogRef);
   }
-
 }
